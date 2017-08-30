@@ -1,0 +1,29 @@
+<div id="wrapper">
+    <div id="container">
+        <div id="welcome">
+            <h1>Offers list</h1>
+        </div>
+
+        <div id="status">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for offer in offers %}
+                        <tr>
+                            <td><a href="{{ path('offer_show', { 'id': offer.id }) }}">{{ offer.id }}</a></td>
+                            <td>{{ offer.title }}</td>
+                            <td>{{ offer.description }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
